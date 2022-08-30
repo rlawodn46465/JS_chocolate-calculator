@@ -12,7 +12,11 @@ console.log(기호);
 function 입력(num) {
   if (num >= 0) {
     //숫자
-    후값 = ''+후값 + num;
+    if(후값 == 0){
+      후값 = Number(후값) + Number(num);
+    } else{
+      후값 = ''+후값 + num;
+    }
     숫자체크 = true;
   } else {
     //기호
@@ -55,6 +59,15 @@ function 제곱(){
   계산식.value = 후값+'^2';
   후값 = Number(Math.pow(Number(후값), 2));
   결과값.innerHTML = 후값;
+}
+
+function 소수점(){
+  if(전값 === 0){
+
+  } else if(후값 !== ''){ //입력값이 비어있으면 안된다.
+    let 정규식 = /[0-9]+\./;
+    후값 = 후값+'.';
+  }
 }
 
 function 결과() {
@@ -102,4 +115,5 @@ function 뒤로가기() {
 }
 
 // 0.!#$ 계산이 불가능하다.
-// % 기능을 다른걸로 대체
+
+console.log(/^\d+\.\d*[^\.]/g.test('0.'))
