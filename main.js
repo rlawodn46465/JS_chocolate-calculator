@@ -51,6 +51,12 @@ function 입력(num) {
   console.log("후값 : " + 후값);
 }
 
+function 제곱(){
+  계산식.value = 후값+'^2';
+  후값 = Number(Math.pow(Number(후값), 2));
+  결과값.innerHTML = 후값;
+}
+
 function 결과() {
   if (전값 === 0 && 후값 === "") {
     //아무것도 안눌렀을때 NaN 오류 방지
@@ -94,3 +100,6 @@ function 뒤로가기() {
     결과값.innerHTML = 후값;
   }
 }
+
+// 0.!#$ 계산이 불가능하다.
+// % 기능을 다른걸로 대체
