@@ -12,7 +12,7 @@ console.log(기호);
 function 입력(num) {
   if (num >= 0) {
     //숫자
-    후값 = 후값 + num;
+    후값 = ''+후값 + num;
     숫자체크 = true;
   } else {
     //기호
@@ -54,6 +54,8 @@ function 입력(num) {
 function 결과() {
   if (전값 === 0 && 후값 === "") {
     //아무것도 안눌렀을때 NaN 오류 방지
+    return;
+  } else if(전값 === 0){
     return;
   }
   후값 = eval(Number(전값) + 기호[0] + Number(후값));
